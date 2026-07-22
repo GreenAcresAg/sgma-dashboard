@@ -29,8 +29,10 @@ const PANEL_ORDER = ["gsp_date", "consultant", "n_gsas", "basin_area", "sustaina
   "total_extraction", "change_in_storage", "smc_subsidence_mt_cumulative", "smc_subsidence_mt_annual",
   "smc_gwl_mt", "smc_storage_ur", "smc_wq_mt", "rms_count_subsidence", "rms_count_gwl", "pma_count"];
 
-let METRICS = {};   // subbasin -> [rows]
-let DOCS = {};      // canonical_name -> {local_filename, drive_url}
+let METRICS = {};        // subbasin -> [rows]
+let DOCS = {};           // canonical_name -> {local_filename, drive_url}
+let GSPS_BY_SUB = {};    // subbasin name -> [registry GSP rows]
+let GSA_ACREAGE = {};    // GSA name -> {total_area:{value,page,source_doc}, irrigated_area:{...}}
 
 /* ---- CSV parsing (quote-aware) ---- */
 function parseCSV(text) {
@@ -79,16 +81,64 @@ function fmt(v, units) {
   return v;
 }
 
+// Eastern Tule GSA is a JPA — these member GSAs are covered by its GSP.
+const ET_MEMBERS = ["Terra Bella Irrigation District GSA", "Porterville Irrigation District GSA",
+  "Saucelito Irrigation District GSA", "Tea Pot Dome Water District GSA", "Vandalia Water District GSA",
+  "County of Tulare GSA - Tule", "Tule East GSA JPA"];
+const escA = (s) => (s || "").replace(/"/g, "'");
+
+/* Full-document link (page 1) for a GSP's "Full GSP" link. */
+function fullGspLink(canon) {
+  const doc = DOCS[canon];
+  if (CFG.PDF_BASE && doc && doc.local_filename) return `${CFG.PDF_BASE}/${encodeURIComponent(doc.local_filename)}`;
+  return (doc && doc.drive_url) || CFG.DRIVE_FOLDER;
+}
+
+/* Second line under each GSA: total + irrigated acreage (from the catalogue), each page-linked. */
+function acreageLine(gsa) {
+  const a = GSA_ACREAGE[gsa] || {};
+  const bit = (o, lbl) => o ? `${Number(o.value).toLocaleString()} ac ${lbl} ` +
+    `<a class="src" href="${srcLink(o.source_doc, o.page).url}" target="_blank">p${pageNum(o.page)}</a>` : "";
+  const parts = [bit(a.total_area, "total"), bit(a.irrigated_area, "irrigated")].filter(Boolean);
+  return parts.length ? `<div class="gsa-ac">${parts.join(" · ")}</div>` : "";
+}
+
+/* GSAs grouped by the GSP that covers them, each group with a Full GSP link. */
+function gsaGroups(name) {
+  const gsas = (window.GSA_BY_SUB[name] || []).slice().sort();
+  if (!gsas.length) return "";
+  const gsps = GSPS_BY_SUB[name] || [];
+  const coord = gsps.find(g => /Subbasin|coordinated/i.test(g.gsa_or_area));
+  const groups = {};
+  for (const g of gsas) {
+    let gsp = gsps.find(x => x.gsa_or_area === g);
+    if (!gsp && ET_MEMBERS.includes(g)) gsp = gsps.find(x => x.gsa_or_area === "Eastern Tule GSA");
+    if (!gsp) gsp = coord;
+    const k = gsp ? gsp.canonical_name : "__none__";
+    (groups[k] = groups[k] || []).push(g);
+  }
+  let html = `<div class="gsa-list"><h4>${gsas.length} GSAs — grouped by GSP</h4>` +
+    `<div class="gsa-note">⚠ GSA acreage auto-extracted from GSPs — page-linked, being verified</div>`;
+  for (const [canon, list] of Object.entries(groups)) {
+    const head = canon === "__none__" ? "<i>GSA GSP not yet cataloged</i>"
+      : `${canon} <a class="src" href="${fullGspLink(canon)}" target="_blank">Full GSP ↗</a>`;
+    html += `<div class="gsp-group"><div class="gsp-head">${head}</div><ul>` +
+      list.map(g => `<li>${g}${acreageLine(g)}</li>`).join("") + `</ul></div>`;
+  }
+  return html + `</div>`;
+}
+
 /* ---- Detail panel ---- */
 function showPanel(name) {
-  const sb = SUBBASINS[name]; const rows = METRICS[name] || [];
+  const sb = SUBBASINS[name];
+  const subRows = (METRICS[name] || []).filter(r => (r.area_name || "Subbasin") === "Subbasin");
   const panel = document.getElementById("panel");
-  if (!rows.length) {
+  if (!subRows.length && !(window.GSA_BY_SUB[name] || []).length) {
     panel.innerHTML = `<h3>${name}</h3><div class="b118">${sb ? sb.b118 : ""}</div>
       <div class="panel-empty">No GSP metrics cataloged for this subbasin yet.</div>`;
     return;
   }
-  const by = {}; rows.forEach(r => { by[r.metric] = r; });
+  const by = {}; subRows.forEach(r => { by[r.metric] = r; });
   let html = `<h3>${name} Subbasin</h3><div class="b118">${sb.b118}</div>`;
   for (const m of PANEL_ORDER) {
     const r = by[m]; if (!r || r.value === "") continue;
@@ -97,11 +147,9 @@ function showPanel(name) {
     const caution = /CAUTION/i.test(r.notes) ? ` <span class="caution">⚠ verify</span>` : "";
     html += `<div class="stat"><div class="stat-k">${METRIC_LABEL[m] || m}${r.period && r.period !== "-" ? " · " + r.period : ""}</div>
       <div class="stat-v">${fmt(r.value, r.units)}${r.units && r.units !== "text" && r.units !== "date" ? " <small>" + r.units + "</small>" : ""}${per}${caution}
-      <a class="src" href="${s.url}" target="_blank" title="${(r.notes || "").replace(/"/g, "'")}">${s.label}</a></div></div>`;
+      <a class="src" href="${s.url}" target="_blank" title="${escA((r.page || r.source_ref) + " — " + r.notes)}">GSP Source Page →</a></div></div>`;
   }
-  // GSA roster from the geojson
-  const gsas = (window.GSA_BY_SUB[name] || []).sort();
-  if (gsas.length) html += `<div class="gsa-list"><h4>${gsas.length} GSAs</h4><ul>${gsas.map(g => `<li>${g}</li>`).join("")}</ul></div>`;
+  html += gsaGroups(name);
   panel.innerHTML = html;
 }
 
@@ -166,13 +214,21 @@ function initMap(geo) {
 }
 
 /* ---- boot ---- */
+const B118_NAME = Object.fromEntries(Object.entries(SUBBASINS).map(([n, v]) => [v.b118, n]));
 Promise.all([
   fetch("data/gsp_metrics.csv").then(r => r.text()),
   fetch("data/source_documents.csv").then(r => r.text()),
   fetch("data/subbasins_gsas.geojson").then(r => r.json()),
-]).then(([mText, dText, geo]) => {
+  fetch("data/gsa_acreage.csv").then(r => r.ok ? r.text() : ""),
+]).then(([mText, dText, geo, aText]) => {
   parseCSV(mText).forEach(r => { (METRICS[r.subbasin_name] = METRICS[r.subbasin_name] || []).push(r); });
-  parseCSV(dText).forEach(r => { DOCS[r.canonical_name] = r; });
+  parseCSV(dText).forEach(r => {
+    DOCS[r.canonical_name] = r;
+    if (r.doc_type === "GSP") { const n = B118_NAME[r.subbasin]; if (n) (GSPS_BY_SUB[n] = GSPS_BY_SUB[n] || []).push(r); }
+  });
+  if (aText) parseCSV(aText).forEach(r => {
+    (GSA_ACREAGE[r.gsa] = GSA_ACREAGE[r.gsa] || {})[r.metric] = { value: r.value, page: r.page, source_doc: r.source_doc };
+  });
   document.getElementById("link-mode").textContent =
     CFG.PDF_BASE ? "(links jump to the exact page)" : "(links open the source document in Drive)";
   document.getElementById("drive-link").href = CFG.DRIVE_FOLDER;
