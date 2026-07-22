@@ -1,0 +1,51 @@
+subbasin,subbasin_name,area_name,category,metric,period,value,units,per_area,source_doc,page,notes
+5-022.09,Westside,Subbasin,metadata,consultant,-,LSCE (Luhdorff & Scalmanini),text,,Westside Subbasin GSP — Amended (LSCE),title,
+5-022.09,Westside,Subbasin,metadata,gsp_date,-,2025-01,date,,Westside Subbasin GSP — Amended (LSCE),title,Amended GSP January 2025
+5-022.09,Westside,Subbasin,metadata,n_gsas,-,1,count,,Westside Subbasin GSP — Amended (LSCE),703,Westlands WD is sole GSA (+~10183 ac to a second GSA west of District)
+5-022.09,Westside,Subbasin,metadata,basin_area,-,622215,acres,,Westside Subbasin GSP — Amended (LSCE),28,972 sq mi
+5-022.09,Westside,Subbasin,water_budget,sustainable_yield,historical,305000,AF/yr,0.4902,Westside Subbasin GSP — Amended (LSCE),33,Table ES-1; historical GW budget 1989-2015 (WSGM)
+5-022.09,Westside,Subbasin,water_budget,sustainable_yield,projected,282000,AF/yr,0.4532,Westside Subbasin GSP — Amended (LSCE),33,Table ES-1; projected 2020-2070 range 270000-294000 (midpoint stored; see notes)
+5-022.09,Westside,Subbasin,water_budget,total_extraction,historical,324000,AF/yr,0.5207,Westside Subbasin GSP — Amended (LSCE),146,long-term average pumping (WSGM)
+5-022.09,Westside,Subbasin,storage,change_in_storage,historical,-19000,AF/yr,-0.0305,Westside Subbasin GSP — Amended (LSCE),146,"decline in storage (overdraft); consultant term ""decline in storage"""
+5-022.09,Westside,Subbasin,smc,smc_subsidence_mt_annual,-,0.3,ft/yr,,Westside Subbasin GSP — Amended (LSCE),35,Table ES-3; same for San Luis Canal & other sites
+5-022.09,Westside,Subbasin,smc,smc_subsidence_mt_cumulative,-,1.5,ft,,Westside Subbasin GSP — Amended (LSCE),35,Table ES-3; San Luis Canal sites (Other sites = 2.5 ft)
+5-022.09,Westside,Subbasin,smc,smc_gwl_mt,-,2012-2016 drought low + 40 ft (baseline in Subsidence Prone Areas),text,,Westside Subbasin GSP — Amended (LSCE),35,Table ES-3; MO = avg fall 2006-2012 levels
+5-022.09,Westside,Subbasin,smc,smc_storage_ur,-,Upper Aquifer decline 51000 AF; Lower Aquifer decline 87000 AF (2 consec yrs),text,,Westside Subbasin GSP — Amended (LSCE),35,Table ES-3; relative to baseline
+5-022.09,Westside,Subbasin,smc,smc_wq_mt,-,Drinking: MCL/HAL; Agricultural: ag WQ targets,text,,Westside Subbasin GSP — Amended (LSCE),35,Table ES-3
+5-022.09,Westside,Subbasin,smc,smc_isw_mt,-,applicable,text,,Westside Subbasin GSP — Amended (LSCE),7,ISW has MOs defined; TODO capture MT value
+5-022.09,Westside,Subbasin,monitoring,rms_count_subsidence,-,46,count,,"Westside Subbasin GSP — Amended (LSCE, 2025)",361,26 WWD GPS + 4 USBR + 12 DWR/CASP + 1 UNAVCO CGPS + 3 USGS extensometer
+5-022.09,Westside,Subbasin,monitoring,rms_count_gwl,-,47,count,,Westside Subbasin GSP — Amended (LSCE),360,Table 3-14 (p360)
+5-022.09,Westside,Subbasin,monitoring,rms_count_wq,-,28,count,,Westside Subbasin GSP — Amended (LSCE),362,approx (network table rows)
+5-022.12,Tulare Lake,Subbasin,metadata,basin_area,-,535869,acres,,Tulare Lake Subbasin GSP — Amended + Addendum,21,837 sq mi (DWR)
+5-022.09,Westside,Subbasin,pma,pma_supply_vs_demand,-,supply (imports+recharge) + demand (allocation),text,,Westside Subbasin GSP — Amended (LSCE),39,Table ES-4
+5-022.12,Tulare Lake,Subbasin,metadata,gsp_date,-,2022,date,,Tulare Lake Subbasin GSP — Amended + Addendum,title,Amended GSP + Addendum
+5-022.12,Tulare Lake,Subbasin,metadata,consultant,-,Tulare Lake Subbasin GSAs (coordinated),text,,Tulare Lake Subbasin GSP — Amended + Addendum,title,TODO confirm lead consultant
+5-022.12,Tulare Lake,Subbasin,water_budget,sustainable_yield,historical,229220,AF/yr,0.4278,Tulare Lake Subbasin GSP — Amended + Addendum,148,normalized to +; GSP writes -229220 AF/Y
+5-022.12,Tulare Lake,Subbasin,water_budget,total_extraction,historical,348700,AF/yr,0.6507,Tulare Lake Subbasin GSP — Amended + Addendum,36,1998-2010 avg pumping; GSP writes -348700 AF/Y
+5-022.12,Tulare Lake,Subbasin,storage,change_in_storage,historical,-85690,AF/yr,-0.1599,Tulare Lake Subbasin GSP — Amended + Addendum,146,1990-2016 avg; range -392280 to +361230
+5-022.12,Tulare Lake,Subbasin,smc,smc_subsidence_mt_cumulative,-,11.5,ft,,Tulare Lake Subbasin GSP — Amended + Addendum,574,max simulated subsidence to 2070 (TLSBHM); model-based not per-benchmark (contrast Westside 1.5-2.5 ft)
+5-022.12,Tulare Lake,Subbasin,monitoring,rms_count_subsidence,-,,count,,Tulare Lake Subbasin GSP — Amended + Addendum,,TODO
+5-022.11,Kaweah,Subbasin,metadata,gsp_date,-,2026,date,,Kaweah Subbasin GSP — East Kaweah GSA (2nd Amended),title,GSA 2nd Amended GSPs 2026 (GKGSA draft 2024); coordinated basin setting
+5-022.11,Kaweah,Subbasin,metadata,consultant,-,3 coordinated GSAs (East/Mid/Greater Kaweah),text,,Kaweah Subbasin GSP — East Kaweah GSA (2nd Amended),title,shared Basin Setting Appendix 3A
+5-022.11,Kaweah,Subbasin,metadata,n_gsas,-,3,count,,Kaweah Subbasin GSP — Greater Kaweah GSA (Draft),35,"East Kaweah, Mid-Kaweah, Greater Kaweah"
+5-022.11,Kaweah,Subbasin,metadata,basin_area,-,441000,acres,,Kaweah Subbasin GSP — Greater Kaweah GSA (Draft),,696 sq mi (CDWR 2003)
+5-022.11,Kaweah,Subbasin,water_budget,sustainable_yield,current,578000,AF/yr,1.3107,Kaweah Subbasin GSP — Greater Kaweah GSA (Draft),89,subbasin-level (coordinated); cited by all 3 GSA GSPs
+5-022.11,Kaweah,Subbasin,storage,change_in_storage,current,-230700,AF/yr,-0.5231,Kaweah Subbasin GSP — Greater Kaweah GSA (Draft),35,"current GW budget: avg annual aquifer storage loss ~230,700 AFY"
+5-022.11,Kaweah,Subbasin,smc,smc_subsidence_mt_annual,-,,ft/yr,,Kaweah Subbasin GSP — Greater Kaweah GSA (Draft),305,MT rates range from ~0.x (per-benchmark); TODO full value
+5-022.11,Kaweah,Subbasin,monitoring,rms_count_subsidence,-,,count,,Kaweah Subbasin GSP — East Kaweah GSA (2nd Amended),,TODO
+5-022.08,Kings,Subbasin,metadata,gsp_date,-,2025,date,,Kings Subbasin GSP — South Kings GSA (2025 Update),title,GSA GSPs 2025 Update (coordinated); Coordination Agreement Appendix A
+5-022.08,Kings,Subbasin,metadata,consultant,-,7 coordinated Kings GSAs,text,,Kings Subbasin GSP — South Kings GSA (2025 Update),24,"NFK/North/Central/South Kings, James, McMullin, Kings River East"
+5-022.08,Kings,Subbasin,metadata,n_gsas,-,7,count,,Kings Subbasin GSP — South Kings GSA (2025 Update),24,
+5-022.08,Kings,Subbasin,metadata,basin_area,-,979200,acres,,Kings Subbasin GSP — South Kings GSA (2025 Update),51,"1,530 sq mi"
+5-022.08,Kings,Subbasin,water_budget,sustainable_yield,current,1240000,AF/yr,1.2663,Kings Subbasin GSP — South Kings GSA (2025 Update),169,"Current Kings Basin Water Budget Table 3-8 (1,450,000 - 210,000)"
+5-022.08,Kings,Subbasin,storage,change_in_storage,current,-122000,AF/yr,-0.1246,Kings Subbasin GSP — South Kings GSA (2025 Update),167,"total overdraft mitigation responsibility, Coordination Agreement Appendix A"
+5-022.13,Tule,Subbasin,metadata,n_gsas,-,6,count,,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),338,"6 exclusive GSAs (Eastern Tule, LTRID, Delano-Earlimart, Pixley, Tri-County, Alpaugh)"
+5-022.13,Tule,Subbasin,metadata,basin_area,-,475895,acres,,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),365,744 sq mi (Bulletin 118)
+5-022.13,Tule,Subbasin,storage,change_in_storage,historical,-115300,AF/yr,-0.2423,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),19,subbasin average overdraft (critically overdrafted)
+5-022.13,Tule,Subbasin,water_budget,sustainable_yield,current,130000,AF/yr,0.2732,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),2425,"CAUTION: reported in LTRID GSP p2425 — likely LTRID allocation, not verified as subbasin total"
+5-022.14,Kern,Subbasin,metadata,gsp_date,-,2026,date,,Kern County Subbasin GSP — 2025 Amended (coordinated),title,"2025 Amended (coordinated, 20 GSAs)"
+5-022.14,Kern,Subbasin,metadata,n_gsas,-,20,count,,Kern County Subbasin GSP — 2025 Amended (coordinated),37,largest CA subbasin; 20 GSAs
+5-022.14,Kern,Subbasin,metadata,basin_area,-,1782321,acres,,Kern County Subbasin GSP — 2025 Amended (coordinated),112,"2,834 sq mi"
+5-022.14,Kern,Subbasin,water_budget,sustainable_yield,current,1312219,AF/yr,0.7362,Kern County Subbasin GSP — 2025 Amended (coordinated),596,water budget table
+5-022.14,Kern,Subbasin,water_budget,total_extraction,current,1586417,AF/yr,0.8901,Kern County Subbasin GSP — 2025 Amended (coordinated),594,avg annual GW pumping
+5-022.14,Kern,Subbasin,storage,change_in_storage,historical,-274200,AF/yr,-0.1538,Kern County Subbasin GSP — 2025 Amended (coordinated),640,long-term storage decline WY1995-2014

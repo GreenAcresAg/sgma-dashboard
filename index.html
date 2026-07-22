@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SJV Subbasin GSP Dashboard — Green Acres</title>
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>San Joaquin Valley — GSP Comparison Dashboard</h1>
+  <p class="sub">Sustainability metrics across the southern SJV subbasins, from adopted Groundwater
+     Sustainability Plans. Click a subbasin on the map for its stats; every number links to the
+     GSP page it came from. <span id="link-mode"></span></p>
+</header>
+
+<main>
+  <section class="map-wrap">
+    <div id="map"></div>
+    <div id="panel" class="panel">
+      <div class="panel-empty">Click a subbasin →</div>
+    </div>
+  </section>
+
+  <section class="charts">
+    <h2>Cross-subbasin comparison</h2>
+    <p class="note">Bars are per-acre normalized so differently-sized subbasins compare fairly.
+       Hover a bar for the value + source.</p>
+    <div id="charts-grid" class="charts-grid"></div>
+  </section>
+
+  <footer>
+    <span>Data: adopted GSPs (see <a id="drive-link" href="#" target="_blank">source documents in Drive</a>).</span>
+    <span>Built by Green Acres Consulting · <a href="https://github.com/GreenAcresAg/sgma-dashboard" target="_blank">source</a></span>
+  </footer>
+</main>
+
+<script src="vendor/maplibre-gl.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

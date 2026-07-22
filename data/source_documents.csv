@@ -1,0 +1,25 @@
+ref_id,canonical_name,doc_type,subbasin,gsa_or_area,version,date,local_filename,notes
+GSP-WS-2025,Westside Subbasin GSP — Amended (LSCE),GSP,5-022.09,Subbasin (Westlands WD),Amended,2025-01,Westside Subbasin Amended GSP (January 2025)_Reduced_20250128.pdf,"SMC Table ES-3 p35; monitoring Table 3-15 p361, Table 3-14 p360"
+GSP-TL-2022,Tulare Lake Subbasin GSP — Amended + Addendum,GSP,5-022.12,Subbasin (coordinated),Amended+Addendum,2022,2022 Tulare Lake Amended GSP and Addendum.pdf,water budget narrative p36/146/148; subsidence MT p574
+GSP-KW-GK-2024,Kaweah Subbasin GSP — Greater Kaweah GSA (Draft),GSP,5-022.11,Greater Kaweah GSA,Draft,2024,GKGSA Draft GSP 2024.pdf,coordinated subbasin water budget p35/89; smaller/faster of the 3 Kaweah GSPs
+GSP-KW-EK-2026,Kaweah Subbasin GSP — East Kaweah GSA (2nd Amended),GSP,5-022.11,East Kaweah GSA,2nd Amended,2026,GSP 2026 (EKGSA 2nd Amended GSP).pdf,3546 pp; cites subbasin yield 578000 AFY p29
+GSP-KW-MK-2026,Kaweah Subbasin GSP — Mid-Kaweah GSA (2nd Amended),GSP,5-022.11,Mid-Kaweah GSA,2nd Amended,2026,GSP 2026 (MKGSA 2nd Amended GSP).pdf,4070 pp
+GSP-TU-LTRID,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),GSP,5-022.13,Lower Tule River ID GSA,Revised,2025,5-022.13_LTRID GSA_Revised GSP.pdf,"L-series benchmark coords, Table 4-4 p278"
+GSP-KI-NFK-2025,Kings Subbasin GSP — North Fork Kings GSA,GSP,5-022.08,North Fork Kings GSA,Update,2025,NFKGSA_GSP 2025 secured.pdf,downloading batch (Kings GSAs)
+AR-TL-WY2019,Tulare Lake Subbasin Annual Report WY2019,annual_report,5-022.12,Subbasin,-,WY2019,5-022.12_TulareLake_WY_2019.pdf,
+AR-TL-WY2020,Tulare Lake Subbasin Annual Report WY2020,annual_report,5-022.12,Subbasin,-,WY2020,5-022-12_WY_2020.pdf,Fig F-1 subsidence map labels
+AR-TL-WY2021,Tulare Lake Subbasin Annual Report WY2021,annual_report,5-022.12,Subbasin,-,WY2021,5-022.12_WY_2021.pdf,WY21 measurement figures
+AR-TL-WY2022,Tulare Lake Subbasin Annual Report WY2022,annual_report,5-022.12,Subbasin,-,WY2022,5-022.12_WY_2022.pdf,WY22/WY21 measurement figures
+AR-TL-WY2023,Tulare Lake Subbasin Annual Report WY2023,annual_report,5-022.12,Subbasin,-,WY2023,5-022.12_WY_2023.pdf,Fall-to-Fall Table E-1 p199
+AR-TL-WY2024,Tulare Lake Subbasin Annual Report WY2024,annual_report,5-022.12,Subbasin,-,WY2024,TLSB 5-022.12_WY_2024.pdf,Table E-1
+AR-TL-WY2025,Tulare Lake Subbasin Annual Report WY2025,annual_report,5-022.12,Subbasin,-,WY2025,5-022.12_WY_2025.pdf,Table E-1 p235
+AR-KW-WY2023,Kaweah Subbasin Annual Report WY2023,annual_report,5-022.11,Subbasin,-,WY2023,50221_WY_2023.pdf,P&P subsidence table pp54-56
+AR-KW-WY2024,Kaweah Subbasin Annual Report WY2024,annual_report,5-022.11,Subbasin,-,WY2024,502211_WY_2024.pdf,P&P subsidence table pp54-56
+AR-KW-WY2025,Kaweah Subbasin Annual Report WY2025,annual_report,5-022.11,Subbasin,-,WY2025,2026-0401 KSB WY2025 Annual Report-Final-wApps.pdf,subsidence table pp45-47
+AR-TU-WY2024,Tule Subbasin Annual Report WY2024,annual_report,5-022.13,Subbasin (TAC),-,WY2024,05-022.13_WY_2024.pdf,Benchmark Name table p430
+AR-TU-WY2025,Tule Subbasin Annual Report WY2025,annual_report,5-022.13,Subbasin (TAC),-,WY2025,05-022.13_WY_2025.pdf,"SMC table pp61-70; RMS GSE appendix pp509-511"
+AR-WS-WY2024,Westside Subbasin Annual Report WY2024,annual_report,5-022.09,Subbasin,-,WY2024,5-022.09_WY_2024.pdf,Table 5-5 leveling pp36-37
+AR-WS-WY2025,Westside Subbasin Annual Report WY2025,annual_report,5-022.09,Subbasin,-,WY2025,5-022.09_WY_2025.pdf,Table 5-5 leveling pp52-53
+AR-KI-WY2024,Kings Subbasin Annual Report WY2024,annual_report,5-022.08,Subbasin,-,WY2024,5-022-08 Kings Basin Annual Report WY2024.pdf,subsidence InSAR-class map only (no numeric benchmark table)
+GSP-KI-SK-2025,Kings Subbasin GSP — South Kings GSA (2025 Update),GSP,5-022.08,South Kings GSA,Update,2025,SKGSP GSP 2025 Update Secured.pdf,"coordinated subbasin water budget: sustainable yield Table 3-8 p169; overdraft Coordination Agreement p167; 7 GSAs p24"
+GSP-KE-2025,Kern County Subbasin GSP — 2025 Amended (coordinated),GSP,5-022.14,Subbasin (20 GSAs),2025 Amended,2026,GSP 2026 (2025 Amended Kern County Subbasin GSP).pdf,"sustainable yield + water budget pp594-596; overdraft p640; area p112; 20 GSAs p37"
