@@ -26,17 +26,21 @@ Google Drive's viewer can't deep-link to a page, so page-jump links need the raw
 object storage that supports HTTP range requests. Set `PDF_BASE` in `config.js` to your public
 bucket and links become `…/<local_filename>#page=<page>`:
 
-1. **Create a bucket** (Cloudflare R2 free tier, or Backblaze B2). Enable public read.
-2. **Upload the PDFs** (filenames must match `local_filename` in `source_documents.csv`). From the
-   Drive-synced folder or local copies:
+1. **Create a public bucket** (Cloudflare R2 free tier, or Backblaze B2). Note its public base URL
+   (e.g. `https://pub-xxxxxxxx.r2.dev`).
+2. **Configure an rclone remote** for it named `r2`: `rclone config` → `s3` / provider `Cloudflare`
+   (or B2). You'll need the bucket's Access Key ID + Secret from the Cloudflare dashboard.
+3. **Upload the PDFs** — the helper stages exactly the files named in the registry and pushes them
+   flat (the dashboard expects `${PDF_BASE}/<local_filename>`):
    ```bash
-   rclone copy "<local docs folder>" r2:sgma-docs --transfers 4
+   scripts/upload-r2.sh ~/Downloads r2:sgma-docs
    ```
-3. Set `PDF_BASE` in `config.js`, e.g. `"https://pub-xxxx.r2.dev/sgma-docs"` (no trailing slash).
+4. Set `PDF_BASE` in `config.js` (e.g. `"https://pub-xxxxxxxx.r2.dev"`, no trailing slash) and push.
 
-Until `PDF_BASE` is set, links fall back to the shared **Drive folder** (opens the document; the
-page number is shown as text). Add a `drive_url` column to `source_documents.csv` to deep-link
-individual Drive files instead of the folder.
+Until `PDF_BASE` is set, links fall back to each document's **Drive file** (`drive_url` in
+`source_documents.csv`, auto-populated from the shared folder) — opens the document; the page is
+shown as text. Two docs (2022 Tulare Lake GSP, GKGSA Draft) aren't in the Drive folders yet, so
+those fall back to the folder link.
 
 ## Deploy
 GitHub Pages, served from `main` / root. Vanilla HTML/JS + vendored MapLibre GL — no build step.
