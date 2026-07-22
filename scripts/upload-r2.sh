@@ -12,11 +12,11 @@
 #
 # Usage:  scripts/upload-r2.sh [SRC_DIR] [R2_REMOTE:BUCKET]
 #   SRC_DIR      where the PDFs currently live locally (default: ~/Downloads)
-#   R2_REMOTE    rclone remote:bucket (default: r2:sgma-docs)
+#   R2_REMOTE    rclone remote:bucket (default: r2:sgma-gsp-data)
 set -euo pipefail
 
 SRC="${1:-$HOME/Downloads}"
-DEST="${2:-r2:sgma-docs}"
+DEST="${2:-r2:sgma-gsp-data}"
 REG="$(dirname "$0")/../data/source_documents.csv"
 STAGE="$(mktemp -d)"
 

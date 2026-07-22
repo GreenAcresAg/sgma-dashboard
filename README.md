@@ -33,7 +33,7 @@ bucket and links become `…/<local_filename>#page=<page>`:
 3. **Upload the PDFs** — the helper stages exactly the files named in the registry and pushes them
    flat (the dashboard expects `${PDF_BASE}/<local_filename>`):
    ```bash
-   scripts/upload-r2.sh ~/Downloads r2:sgma-docs
+   scripts/upload-r2.sh ~/Downloads r2:sgma-gsp-data
    ```
 4. Set `PDF_BASE` in `config.js` (e.g. `"https://pub-xxxxxxxx.r2.dev"`, no trailing slash) and push.
 
