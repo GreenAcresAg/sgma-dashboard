@@ -35,6 +35,7 @@ let GSPS_BY_SUB = {};    // subbasin name -> [registry GSP rows]
 let GSA_ACREAGE = {};    // GSA name -> {total_area:{value,page,source_doc}, irrigated_area:{...}}
 let CROP = [];           // rows: {subbasin,gsa,year,cropped_acres,...crop cats}
 const CROP_YEARS = [2020, 2021, 2022, 2023, 2024];
+let WELLS_BY_GSA = {};   // gsa name -> {wells_pip, gears_reported, by-purpose...} (Tule/Tulare Lake, GEARS)
 
 /* ---- CSV parsing (quote-aware) ---- */
 function parseCSV(text) {
@@ -122,6 +123,9 @@ function acreageLine(gsa) {
     if (c) parts.push(`${Math.round(Number(c.cropped_acres)).toLocaleString()} ac cropped ` +
       `<a class="src" href="${DWR_PORTAL}" target="_blank" title="DWR LandIQ ${c.year}">${c.year}</a>`);
   }
+  // GEARS extraction wells (Tule/Tulare Lake only).
+  const w = WELLS_BY_GSA[gsa];
+  if (w && Number(w.wells_pip) > 0) parts.push(`${Number(w.wells_pip).toLocaleString()} GEARS wells`);
   return parts.length ? `<div class="gsa-ac">${parts.join(" · ")}</div>` : "";
 }
 
@@ -177,12 +181,34 @@ function showPanel(name) {
       <a class="src" href="${s.url}" target="_blank" title="${escA((r.page || r.source_ref) + " — " + r.notes)}">GSP Source Page →</a></div></div>`;
   }
   html += cropTrendSection(name);
+  html += gearsWellsSection(name);
   html += breakdownSection(name, "extraction", "Groundwater pumping by sector",
     "gw_extraction_total", "gw_extraction_", "AF/yr");
   html += breakdownSection(name, "monitoring", "Monitoring wells by use",
     "rms_wells_total", "rms_wells_", "count");
   html += gsaGroups(name);
   panel.innerHTML = html;
+}
+
+/* GEARS extraction wells by purpose (Tule & Tulare Lake only — the GEARS coverage area), summed
+   from the per-GSA GEARS well data, with the map's point-in-polygon total cross-checked against
+   GEARS' own reported total. */
+const GEARS_PURPOSES = [["irrigated_agriculture", "Irrigated Ag"], ["household", "Household"],
+  ["livestock", "Livestock"], ["public_supply", "Public Supply"], ["industrial", "Industrial"],
+  ["other", "Other"], ["unknown", "Unknown"]];
+function gearsWellsSection(name) {
+  const rows = Object.values(WELLS_BY_GSA).filter(r => r.subbasin === name);
+  if (!rows.length) return "";
+  const N = k => rows.reduce((a, r) => a + Number(r[k] || 0), 0);
+  const pip = N("wells_pip"), gears = N("gears_reported"), dm = N("de_minimis");
+  const purp = GEARS_PURPOSES.map(([k, lbl]) => ({ lbl, n: N(k) })).filter(p => p.n > 0)
+    .sort((a, b) => b.n - a.n);
+  const gearsUrl = "https://greenacresag.github.io/GEARS-map/";
+  return `<div class="gsa-list"><h4>GEARS extraction wells
+      <a class="src" href="${gearsUrl}" target="_blank" title="GreenAcresAg GEARS map">GEARS ↗</a></h4>
+    <div class="stat-v" style="font-size:15px">${pip.toLocaleString()} <small>wells · ${dm.toLocaleString()} de minimis</small></div>
+    <div class="gsa-ac" style="color:#15803d">✓ map point-in-polygon ${pip.toLocaleString()} vs GEARS-reported ${gears.toLocaleString()} (±${Math.abs(pip - gears)})</div>
+    <ul>${purp.map(p => `<li>${p.lbl}: <b>${p.n.toLocaleString()}</b> <small>(${Math.round(p.n / pip * 100)}%)</small></li>`).join("")}</ul></div>`;
 }
 
 /* Cropped-acre trend (2020–2024) for a subbasin: a small year-by-year bar sparkline, sourced
@@ -357,8 +383,10 @@ Promise.all([
   fetch("data/subbasins_gsas.geojson").then(r => r.json()),
   fetch("data/gsa_acreage.csv").then(r => r.ok ? r.text() : ""),
   fetch("data/crop_acres_by_gsa.csv").then(r => r.ok ? r.text() : ""),
-]).then(([mText, dText, geo, aText, cText]) => {
+  fetch("data/wells_by_gsa.csv").then(r => r.ok ? r.text() : ""),
+]).then(([mText, dText, geo, aText, cText, wText]) => {
   if (cText) CROP = parseCSV(cText);
+  if (wText) parseCSV(wText).forEach(r => { WELLS_BY_GSA[r.gsa] = r; });
   parseCSV(mText).forEach(r => { (METRICS[r.subbasin_name] = METRICS[r.subbasin_name] || []).push(r); });
   parseCSV(dText).forEach(r => {
     DOCS[r.canonical_name] = r;
