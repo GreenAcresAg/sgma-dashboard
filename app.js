@@ -206,8 +206,18 @@ function cropTrendSection(name) {
       <span style="color:${chg < 0 ? '#b45309' : '#15803d'}">(${chg >= 0 ? '+' : ''}${chg}% since ${first.y})</span></div></div>`;
 }
 
+/* Latest (2024) cropped acres for a subbasin, from the LandIQ crop series. */
+function subCropped(name, year) {
+  const rows = CROP.filter(c => c.subbasin === name && (year ? Number(c.year) === year : true));
+  if (!rows.length) return 0;
+  const y = year || Math.max(...rows.map(c => Number(c.year)));
+  return CROP.filter(c => c.subbasin === name && Number(c.year) === y)
+    .reduce((a, c) => a + Number(c.cropped_acres || 0), 0);
+}
+
 /* A titled block: a total row + its component breakdown, all sharing one (DWR) source link.
-   Rows are category-matched; `totalMetric` is the sum row, `prefix`+X are the components. */
+   Rows are category-matched; `totalMetric` is the sum row, `prefix`+X are the components.
+   For AF/yr sectors, also shows AF per cropped acre (dual normalization). */
 function breakdownSection(name, category, title, totalMetric, prefix, units) {
   const rows = (METRICS[name] || []).filter(r => r.category === category &&
     (r.area_name || "Subbasin") === "Subbasin" && r.metric.startsWith(prefix) && r.value !== "");
@@ -218,12 +228,15 @@ function breakdownSection(name, category, title, totalMetric, prefix, units) {
   const period = total && total.period && total.period !== "current" ? " · " + total.period : "";
   const label = m => m.replace(prefix, "").replace(/_/g, " ");
   const num = v => Number(v).toLocaleString();
+  const cropped = units === "AF/yr" ? subCropped(name) : 0;   // dual-normalize AF metrics per cropped acre
+  const perCrop = v => cropped ? ` <small>· ${(Number(v) / cropped).toFixed(2)} AF/cropped-ac</small>` : "";
   let html = `<div class="gsa-list"><h4>${title}${period}` +
     ` <a class="src" href="${s.url}" target="_blank" title="${escA((total || parts[0]).notes)}">${s.label}</a></h4>`;
-  if (total) html += `<div class="stat-v" style="font-size:15px">${num(total.value)} <small>${units}</small></div>`;
+  if (total) html += `<div class="stat-v" style="font-size:15px">${num(total.value)} <small>${units}</small>${perCrop(total.value)}</div>`;
   html += `<ul>` + parts.map(r => {
     const pct = total && Number(total.value) ? ` <small>(${Math.round(Number(r.value) / Number(total.value) * 100)}%)</small>` : "";
-    return `<li>${label(r.metric)}: <b>${num(r.value)}</b>${units === "count" ? "" : " " + units}${pct}</li>`;
+    const pc = /agricultural/.test(r.metric) ? perCrop(r.value) : "";
+    return `<li>${label(r.metric)}: <b>${num(r.value)}</b>${units === "count" ? "" : " " + units}${pct}${pc}</li>`;
   }).join("") + `</ul></div>`;
   return html;
 }
@@ -245,6 +258,26 @@ function barChart(title, metric, opts) {
       <span class="val">${opts.fmt(d.val)} <a class="src" href="${s.url}" target="_blank" title="${d.row.source_doc}">↗</a></span></div>`;
   }).join("");
   return `<div class="chart-card"><h3>${title}</h3>${rows}</div>`;
+}
+
+/* Cross-subbasin AF/yr metric normalized per cropped acre (LandIQ), not per total subbasin area —
+   a truer "applied groundwater depth" comparison. */
+function perCroppedAcreChart(title, metric) {
+  const data = Object.keys(SUBBASINS).map(name => {
+    const r = (METRICS[name] || []).find(x => x.metric === metric && x.value !== "");
+    const crop = subCropped(name);
+    return r && crop ? { name, val: Number(r.value) / crop, row: r } : null;
+  }).filter(Boolean).sort((a, b) => b.val - a.val);
+  if (!data.length) return "";
+  const max = Math.max(...data.map(d => d.val));
+  const rows = data.map(d => {
+    const s = srcLink(d.row.source_doc, d.row.page);
+    const w = max ? (d.val / max * 100) : 0;
+    return `<div class="bar-row"><span class="lbl">${d.name}</span>
+      <span class="bar-track"><span class="bar-fill" style="width:${w}%;background:${SUBBASINS[d.name].color}"></span></span>
+      <span class="val">${d.val.toFixed(2)} <a class="src" href="${s.url}" target="_blank" title="ag pumping ÷ 2024 cropped acres">↗</a></span></div>`;
+  }).join("");
+  return `<div class="chart-card"><h3>${title} <small style="font-weight:400;color:#64748b">AF/cropped-ac</small></h3>${rows}</div>`;
 }
 
 /* Cross-subbasin cropped acres (2024) with a 2020→2024 change indicator. */
@@ -274,7 +307,7 @@ function renderCharts() {
     barChart("Sustainable yield (per acre)", "sustainable_yield", { perArea: true, fmt: v => v.toFixed(2) + " AF/ac" }),
     barChart("Overdraft — change in storage (per acre)", "change_in_storage", { perArea: true, fmt: v => v.toFixed(2) + " AF/ac" }),
     barChart("Sustainable yield (total)", "sustainable_yield", { perArea: false, fmt: v => Math.round(v).toLocaleString() + " AFY" }),
-    barChart("Ag groundwater pumping (per acre)", "gw_extraction_agricultural", { perArea: true, fmt: v => v.toFixed(2) + " AF/ac" }),
+    perCroppedAcreChart("Ag pumping per cropped acre", "gw_extraction_agricultural"),
     barChart("Total groundwater pumping", "gw_extraction_total", { perArea: false, fmt: v => Math.round(v).toLocaleString() + " AFY" }),
     cropCompareChart(),
     barChart("Subbasin area", "basin_area", { perArea: false, fmt: v => Math.round(v).toLocaleString() + " ac" }),
