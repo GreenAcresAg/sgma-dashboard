@@ -49,3 +49,150 @@ subbasin,subbasin_name,area_name,category,metric,period,value,units,per_area,sou
 5-022.14,Kern,Subbasin,water_budget,sustainable_yield,current,1312219,AF/yr,0.7362,Kern County Subbasin GSP — 2025 Amended (coordinated),596,water budget table
 5-022.14,Kern,Subbasin,water_budget,total_extraction,current,1586417,AF/yr,0.8901,Kern County Subbasin GSP — 2025 Amended (coordinated),594,avg annual GW pumping
 5-022.14,Kern,Subbasin,storage,change_in_storage,historical,-274200,AF/yr,-0.1538,Kern County Subbasin GSP — 2025 Amended (coordinated),640,long-term storage decline WY1995-2014
+5-022.08,Kings,Subbasin,extraction,gw_extraction_total,WY2025,1555781,AF/yr,1.5888,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,extraction,gw_extraction_agricultural,WY2025,1371193,AF/yr,1.4003,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,88% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,extraction,gw_extraction_urban,WY2025,154235,AF/yr,0.1575,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,10% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,extraction,gw_extraction_managed_recharge,WY2025,96701,AF/yr,0.0988,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,6% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,extraction,gw_extraction_other,WY2025,30353,AF/yr,0.0310,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,2% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.09,Westside,Subbasin,extraction,gw_extraction_total,WY2025,52000,AF/yr,0.0836,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,data.cnra.ca.gov SGMA Annual Report datasets
+5-022.09,Westside,Subbasin,extraction,gw_extraction_agricultural,WY2025,52000,AF/yr,0.0836,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,100% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.09,Westside,Subbasin,extraction,gw_extraction_other,WY2025,130,AF/yr,0.0002,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,0% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,extraction,gw_extraction_total,WY2025,635000,AF/yr,1.4399,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,extraction,gw_extraction_agricultural,WY2025,553200,AF/yr,1.2544,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,87% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,extraction,gw_extraction_urban,WY2025,59900,AF/yr,0.1358,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,9% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,extraction,gw_extraction_industrial,WY2025,21500,AF/yr,0.0488,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,3% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,extraction,gw_extraction_managed_recharge,WY2025,24200,AF/yr,0.0549,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,4% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,extraction,gw_extraction_vegetation,WY2025,400,AF/yr,0.0009,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,0% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,extraction,gw_extraction_total,WY2025,392833,AF/yr,0.7331,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,extraction,gw_extraction_agricultural,WY2025,357414,AF/yr,0.6670,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,91% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,extraction,gw_extraction_urban,WY2025,24940,AF/yr,0.0465,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,6% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,extraction,gw_extraction_industrial,WY2025,1704,AF/yr,0.0032,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,0% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,extraction,gw_extraction_other,WY2025,8775,AF/yr,0.0164,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,2% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,extraction,gw_extraction_total,WY2025,527820,AF/yr,1.1091,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,extraction,gw_extraction_agricultural,WY2025,498360,AF/yr,1.0472,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,94% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,extraction,gw_extraction_urban,WY2025,16760,AF/yr,0.0352,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,3% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,extraction,gw_extraction_other,WY2025,12700,AF/yr,0.0267,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,2% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,extraction,gw_extraction_total,WY2025,1214614,AF/yr,0.6815,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,extraction,gw_extraction_agricultural,WY2025,856449,AF/yr,0.4805,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,71% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,extraction,gw_extraction_urban,WY2025,160542,AF/yr,0.0901,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,13% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,extraction,gw_extraction_industrial,WY2025,5973,AF/yr,0.0034,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,0% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,extraction,gw_extraction_managed_recharge,WY2025,145826,AF/yr,0.0818,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,12% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,extraction,gw_extraction_other,WY2025,45823,AF/yr,0.0257,DWR SGMA GSP Annual Report data (gspar) — groundwater_extraction,WY2025,4% of total; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,monitoring,rms_wells_total,current,220,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,Representative monitoring wells (groundwater-level network); data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,monitoring,rms_wells_irrigation,current,84,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Irrigation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,monitoring,rms_wells_observation,current,58,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Observation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,monitoring,rms_wells_other,current,33,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Other; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,monitoring,rms_wells_unknown,current,17,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Unknown; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,monitoring,rms_wells_public_supply,current,12,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Public Supply; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,monitoring,rms_wells_residential,current,12,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Residential; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,monitoring,rms_wells_industrial,current,3,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Industrial; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.14,Kern,Subbasin,monitoring,rms_wells_stockwatering,current,1,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Stockwatering; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,monitoring,rms_wells_total,current,186,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,Representative monitoring wells (groundwater-level network); data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,monitoring,rms_wells_irrigation,current,83,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Irrigation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,monitoring,rms_wells_observation,current,46,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Observation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,monitoring,rms_wells_unknown,current,29,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Unknown; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,monitoring,rms_wells_public_supply,current,23,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Public Supply; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.08,Kings,Subbasin,monitoring,rms_wells_residential,current,5,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Residential; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.09,Westside,Subbasin,monitoring,rms_wells_total,current,93,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,Representative monitoring wells (groundwater-level network); data.cnra.ca.gov SGMA Annual Report datasets
+5-022.09,Westside,Subbasin,monitoring,rms_wells_irrigation,current,75,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Irrigation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.09,Westside,Subbasin,monitoring,rms_wells_observation,current,18,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Observation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,monitoring,rms_wells_total,current,119,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,Representative monitoring wells (groundwater-level network); data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,monitoring,rms_wells_irrigation,current,53,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Irrigation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,monitoring,rms_wells_unknown,current,33,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Unknown; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,monitoring,rms_wells_observation,current,19,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Observation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,monitoring,rms_wells_residential,current,8,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Residential; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,monitoring,rms_wells_stockwatering,current,3,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Stockwatering; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,monitoring,rms_wells_other,current,2,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Other; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,monitoring,rms_wells_industrial,current,1,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Industrial; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,monitoring,rms_wells_total,current,65,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,Representative monitoring wells (groundwater-level network); data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,monitoring,rms_wells_unknown,current,22,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Unknown; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,monitoring,rms_wells_observation,current,19,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Observation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,monitoring,rms_wells_irrigation,current,16,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Irrigation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,monitoring,rms_wells_public_supply,current,4,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Public Supply; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,monitoring,rms_wells_residential,current,3,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Residential; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.12,Tulare Lake,Subbasin,monitoring,rms_wells_industrial,current,1,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Industrial; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,monitoring,rms_wells_total,current,65,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,Representative monitoring wells (groundwater-level network); data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,monitoring,rms_wells_unknown,current,18,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Unknown; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,monitoring,rms_wells_observation,current,18,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Observation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,monitoring,rms_wells_irrigation,current,17,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Irrigation; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,monitoring,rms_wells_residential,current,7,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Residential; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,monitoring,rms_wells_public_supply,current,4,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Public Supply; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.13,Tule,Subbasin,monitoring,rms_wells_other,current,1,count,,DWR SGMA Monitoring Network data — groundwater_level_sites,GWL sites,well_use=Other; data.cnra.ca.gov SGMA Annual Report datasets
+5-022.11,Kaweah,Subbasin,landuse,cropped_acres,WY2020,313636,acres,0.7112,DWR i15 Statewide Crop Mapping (LandIQ) 2020,2020,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 71% of subbasin
+5-022.11,Kaweah,Subbasin,landuse,cropped_acres,WY2021,302256,acres,0.6854,DWR i15 Statewide Crop Mapping (LandIQ) 2021,2021,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 69% of subbasin
+5-022.11,Kaweah,Subbasin,landuse,cropped_acres,WY2022,307712,acres,0.6978,DWR i15 Statewide Crop Mapping (LandIQ) 2022,2022,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 70% of subbasin
+5-022.11,Kaweah,Subbasin,landuse,cropped_acres,WY2023,307685,acres,0.6977,DWR i15 Statewide Crop Mapping (LandIQ) 2023,2023,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 70% of subbasin
+5-022.11,Kaweah,Subbasin,landuse,cropped_acres,WY2024,304528,acres,0.6905,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 69% of subbasin
+5-022.14,Kern,Subbasin,landuse,cropped_acres,WY2020,719767,acres,0.4038,DWR i15 Statewide Crop Mapping (LandIQ) 2020,2020,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 40% of subbasin
+5-022.14,Kern,Subbasin,landuse,cropped_acres,WY2021,697622,acres,0.3914,DWR i15 Statewide Crop Mapping (LandIQ) 2021,2021,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 39% of subbasin
+5-022.14,Kern,Subbasin,landuse,cropped_acres,WY2022,719966,acres,0.4039,DWR i15 Statewide Crop Mapping (LandIQ) 2022,2022,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 40% of subbasin
+5-022.14,Kern,Subbasin,landuse,cropped_acres,WY2023,727821,acres,0.4084,DWR i15 Statewide Crop Mapping (LandIQ) 2023,2023,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 41% of subbasin
+5-022.14,Kern,Subbasin,landuse,cropped_acres,WY2024,716299,acres,0.4019,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 40% of subbasin
+5-022.08,Kings,Subbasin,landuse,cropped_acres,WY2020,638509,acres,0.6521,DWR i15 Statewide Crop Mapping (LandIQ) 2020,2020,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 65% of subbasin
+5-022.08,Kings,Subbasin,landuse,cropped_acres,WY2021,634425,acres,0.6479,DWR i15 Statewide Crop Mapping (LandIQ) 2021,2021,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 65% of subbasin
+5-022.08,Kings,Subbasin,landuse,cropped_acres,WY2022,638360,acres,0.6519,DWR i15 Statewide Crop Mapping (LandIQ) 2022,2022,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 65% of subbasin
+5-022.08,Kings,Subbasin,landuse,cropped_acres,WY2023,642108,acres,0.6557,DWR i15 Statewide Crop Mapping (LandIQ) 2023,2023,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 66% of subbasin
+5-022.08,Kings,Subbasin,landuse,cropped_acres,WY2024,635359,acres,0.6489,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 65% of subbasin
+5-022.12,Tulare Lake,Subbasin,landuse,cropped_acres,WY2020,278691,acres,0.5201,DWR i15 Statewide Crop Mapping (LandIQ) 2020,2020,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 52% of subbasin
+5-022.12,Tulare Lake,Subbasin,landuse,cropped_acres,WY2021,244089,acres,0.4555,DWR i15 Statewide Crop Mapping (LandIQ) 2021,2021,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 46% of subbasin
+5-022.12,Tulare Lake,Subbasin,landuse,cropped_acres,WY2022,262879,acres,0.4906,DWR i15 Statewide Crop Mapping (LandIQ) 2022,2022,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 49% of subbasin
+5-022.12,Tulare Lake,Subbasin,landuse,cropped_acres,WY2023,237339,acres,0.4429,DWR i15 Statewide Crop Mapping (LandIQ) 2023,2023,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 44% of subbasin
+5-022.12,Tulare Lake,Subbasin,landuse,cropped_acres,WY2024,287682,acres,0.5369,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 54% of subbasin
+5-022.13,Tule,Subbasin,landuse,cropped_acres,WY2020,313280,acres,0.6583,DWR i15 Statewide Crop Mapping (LandIQ) 2020,2020,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 66% of subbasin
+5-022.13,Tule,Subbasin,landuse,cropped_acres,WY2021,289464,acres,0.6083,DWR i15 Statewide Crop Mapping (LandIQ) 2021,2021,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 61% of subbasin
+5-022.13,Tule,Subbasin,landuse,cropped_acres,WY2022,314832,acres,0.6616,DWR i15 Statewide Crop Mapping (LandIQ) 2022,2022,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 66% of subbasin
+5-022.13,Tule,Subbasin,landuse,cropped_acres,WY2023,318570,acres,0.6694,DWR i15 Statewide Crop Mapping (LandIQ) 2023,2023,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 67% of subbasin
+5-022.13,Tule,Subbasin,landuse,cropped_acres,WY2024,316419,acres,0.6649,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 66% of subbasin
+5-022.09,Westside,Subbasin,landuse,cropped_acres,WY2020,400604,acres,0.6438,DWR i15 Statewide Crop Mapping (LandIQ) 2020,2020,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 64% of subbasin
+5-022.09,Westside,Subbasin,landuse,cropped_acres,WY2021,373536,acres,0.6003,DWR i15 Statewide Crop Mapping (LandIQ) 2021,2021,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 60% of subbasin
+5-022.09,Westside,Subbasin,landuse,cropped_acres,WY2022,356354,acres,0.5727,DWR i15 Statewide Crop Mapping (LandIQ) 2022,2022,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 57% of subbasin
+5-022.09,Westside,Subbasin,landuse,cropped_acres,WY2023,431245,acres,0.6931,DWR i15 Statewide Crop Mapping (LandIQ) 2023,2023,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 69% of subbasin
+5-022.09,Westside,Subbasin,landuse,cropped_acres,WY2024,421797,acres,0.6779,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,Irrigated cropland from LandIQ crop map (intersects GSA boundaries); 68% of subbasin
+5-022.11,Kaweah,Subbasin,landuse,crop_deciduous,WY2024,89722,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.11,Kaweah,Subbasin,landuse,crop_field,WY2024,87306,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.11,Kaweah,Subbasin,landuse,crop_citrus,WY2024,74690,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.11,Kaweah,Subbasin,landuse,crop_pasture,WY2024,21251,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.11,Kaweah,Subbasin,landuse,crop_grain,WY2024,18980,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.11,Kaweah,Subbasin,landuse,crop_vineyard,WY2024,5897,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.11,Kaweah,Subbasin,landuse,crop_truck,WY2024,3620,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.11,Kaweah,Subbasin,landuse,crop_young_perennial,WY2024,3061,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.14,Kern,Subbasin,landuse,crop_deciduous,WY2024,384972,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.14,Kern,Subbasin,landuse,crop_citrus,WY2024,67599,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.14,Kern,Subbasin,landuse,crop_field,WY2024,62246,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.14,Kern,Subbasin,landuse,crop_vineyard,WY2024,61798,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.14,Kern,Subbasin,landuse,crop_truck,WY2024,53918,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.14,Kern,Subbasin,landuse,crop_grain,WY2024,49050,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.14,Kern,Subbasin,landuse,crop_pasture,WY2024,30643,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.14,Kern,Subbasin,landuse,crop_young_perennial,WY2024,6073,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.08,Kings,Subbasin,landuse,crop_deciduous,WY2024,298789,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.08,Kings,Subbasin,landuse,crop_vineyard,WY2024,112957,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.08,Kings,Subbasin,landuse,crop_citrus,WY2024,81283,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.08,Kings,Subbasin,landuse,crop_field,WY2024,54448,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.08,Kings,Subbasin,landuse,crop_pasture,WY2024,34662,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.08,Kings,Subbasin,landuse,crop_grain,WY2024,22024,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.08,Kings,Subbasin,landuse,crop_truck,WY2024,18549,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.08,Kings,Subbasin,landuse,crop_young_perennial,WY2024,12647,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.12,Tulare Lake,Subbasin,landuse,crop_field,WY2024,133572,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.12,Tulare Lake,Subbasin,landuse,crop_deciduous,WY2024,86981,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.12,Tulare Lake,Subbasin,landuse,crop_grain,WY2024,29092,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.12,Tulare Lake,Subbasin,landuse,crop_truck,WY2024,19340,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.12,Tulare Lake,Subbasin,landuse,crop_pasture,WY2024,11150,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.12,Tulare Lake,Subbasin,landuse,crop_vineyard,WY2024,4247,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.12,Tulare Lake,Subbasin,landuse,crop_citrus,WY2024,2297,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.12,Tulare Lake,Subbasin,landuse,crop_young_perennial,WY2024,1003,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.13,Tule,Subbasin,landuse,crop_deciduous,WY2024,141029,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.13,Tule,Subbasin,landuse,crop_field,WY2024,52835,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.13,Tule,Subbasin,landuse,crop_grain,WY2024,40427,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.13,Tule,Subbasin,landuse,crop_citrus,WY2024,36704,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.13,Tule,Subbasin,landuse,crop_vineyard,WY2024,31634,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.13,Tule,Subbasin,landuse,crop_pasture,WY2024,9467,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.13,Tule,Subbasin,landuse,crop_truck,WY2024,2785,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.13,Tule,Subbasin,landuse,crop_young_perennial,WY2024,1538,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.09,Westside,Subbasin,landuse,crop_deciduous,WY2024,192180,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.09,Westside,Subbasin,landuse,crop_truck,WY2024,89898,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.09,Westside,Subbasin,landuse,crop_grain,WY2024,77400,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.09,Westside,Subbasin,landuse,crop_field,WY2024,36187,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.09,Westside,Subbasin,landuse,crop_vineyard,WY2024,15486,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.09,Westside,Subbasin,landuse,crop_citrus,WY2024,4212,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.09,Westside,Subbasin,landuse,crop_young_perennial,WY2024,4091,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class
+5-022.09,Westside,Subbasin,landuse,crop_pasture,WY2024,2344,acres,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,2024,2024 cropped acres by DWR crop class

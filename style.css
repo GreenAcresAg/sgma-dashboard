@@ -56,3 +56,9 @@ footer a { color: #2563eb; text-decoration: none; }
 .gsa-ac { font-size: 11px; color: #64748b; margin: 1px 0 3px; }
 .gsa-ac a.src { color: #2563eb; }
 .gsa-note { font-size: 11px; color: #b45309; margin: 2px 0 6px; }
+
+/* Cropped-acre trend sparkline */
+.ct-wrap { display: flex; align-items: flex-end; gap: 6px; height: 60px; margin: 6px 0 4px; }
+.ct-col { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; }
+.ct-bar { width: 60%; min-width: 10px; background: #22c55e; border-radius: 2px 2px 0 0; }
+.ct-yr { font-size: 10px; color: #64748b; margin-top: 2px; }

@@ -33,6 +33,8 @@ let METRICS = {};        // subbasin -> [rows]
 let DOCS = {};           // canonical_name -> {local_filename, drive_url}
 let GSPS_BY_SUB = {};    // subbasin name -> [registry GSP rows]
 let GSA_ACREAGE = {};    // GSA name -> {total_area:{value,page,source_doc}, irrigated_area:{...}}
+let CROP = [];           // rows: {subbasin,gsa,year,cropped_acres,...crop cats}
+const CROP_YEARS = [2020, 2021, 2022, 2023, 2024];
 
 /* ---- CSV parsing (quote-aware) ---- */
 function parseCSV(text) {
@@ -62,8 +64,13 @@ function pageNum(s) {
   return m ? m[1] : "";
 }
 
+// DWR-sourced metrics (extractions, wells, storage) link to the public CNRA SGMA dataset portal.
+const DWR_DATA_URL = "https://data.cnra.ca.gov/dataset/sgma-groundwater-management/resource";
+const DWR_PORTAL = "https://data.cnra.ca.gov/dataset/sgma-groundwater-management";
+
 /* Resolve a value's source to a URL: R2 page-jump if PDF_BASE set, else the Drive folder. */
 function srcLink(sourceDoc, page) {
+  if (/^DWR\b/.test(sourceDoc || "")) return { url: DWR_PORTAL, label: "DWR data ↗" };
   const doc = DOCS[sourceDoc];
   const file = doc && doc.local_filename;
   const pg = pageNum(page);
@@ -97,9 +104,21 @@ function fullGspLink(canon) {
 /* Second line under each GSA: total + irrigated acreage (from the catalogue), each page-linked. */
 function acreageLine(gsa) {
   const a = GSA_ACREAGE[gsa] || {};
-  const bit = (o, lbl) => o ? `${Number(o.value).toLocaleString()} ac ${lbl} ` +
-    `<a class="src" href="${srcLink(o.source_doc, o.page).url}" target="_blank">p${pageNum(o.page)}</a>` : "";
+  const tag = { derived: ' <i title="subbasin residual — GSP states only sub-areas">(derived)</i>',
+                crossref: ' <i title="stated in a neighboring GSP">(cross-ref)</i>' };
+  const bit = (o, lbl) => {
+    if (!o) return "";
+    const linkText = o.status === "landiq" ? "LandIQ 2024" : "p" + pageNum(o.page);
+    return `${Number(o.value).toLocaleString()} ac ${lbl} ` +
+      `<a class="src" href="${srcLink(o.source_doc, o.page).url}" target="_blank">${linkText}</a>` + (tag[o.status] || "");
+  };
   const parts = [bit(a.total_area, "total"), bit(a.irrigated_area, "irrigated")].filter(Boolean);
+  // If no catalogued irrigated figure, fall back to the latest LandIQ cropped acres for this GSA.
+  if (!a.irrigated_area) {
+    const c = CROP.filter(r => r.gsa === gsa).sort((x, y) => Number(y.year) - Number(x.year))[0];
+    if (c) parts.push(`${Math.round(Number(c.cropped_acres)).toLocaleString()} ac cropped ` +
+      `<a class="src" href="${DWR_PORTAL}" target="_blank" title="DWR LandIQ ${c.year}">${c.year}</a>`);
+  }
   return parts.length ? `<div class="gsa-ac">${parts.join(" · ")}</div>` : "";
 }
 
@@ -117,8 +136,13 @@ function gsaGroups(name) {
     const k = gsp ? gsp.canonical_name : "__none__";
     (groups[k] = groups[k] || []).push(g);
   }
+  const acr = gsas.map(g => GSA_ACREAGE[g]).filter(Boolean);
+  const anyVerified = acr.some(a => a.total_area && a.total_area.status === "verified");
+  const note = anyVerified
+    ? `✓ GSA total area verified against GSP pages (sums to subbasin). Irrigated acreage: most-recent from DWR land-use data, in progress.`
+    : `⚠ GSA acreage auto-extracted from GSPs — page-linked, being verified.`;
   let html = `<div class="gsa-list"><h4>${gsas.length} GSAs — grouped by GSP</h4>` +
-    `<div class="gsa-note">⚠ GSA acreage auto-extracted from GSPs — page-linked, being verified</div>`;
+    `<div class="gsa-note"${anyVerified ? ' style="color:#15803d"' : ''}>${note}</div>`;
   for (const [canon, list] of Object.entries(groups)) {
     const head = canon === "__none__" ? "<i>GSA GSP not yet cataloged</i>"
       : `${canon} <a class="src" href="${fullGspLink(canon)}" target="_blank">Full GSP ↗</a>`;
@@ -149,8 +173,59 @@ function showPanel(name) {
       <div class="stat-v">${fmt(r.value, r.units)}${r.units && r.units !== "text" && r.units !== "date" ? " <small>" + r.units + "</small>" : ""}${per}${caution}
       <a class="src" href="${s.url}" target="_blank" title="${escA((r.page || r.source_ref) + " — " + r.notes)}">GSP Source Page →</a></div></div>`;
   }
+  html += cropTrendSection(name);
+  html += breakdownSection(name, "extraction", "Groundwater pumping by sector",
+    "gw_extraction_total", "gw_extraction_", "AF/yr");
+  html += breakdownSection(name, "monitoring", "Monitoring wells by use",
+    "rms_wells_total", "rms_wells_", "count");
   html += gsaGroups(name);
   panel.innerHTML = html;
+}
+
+/* Cropped-acre trend (2020–2024) for a subbasin: a small year-by-year bar sparkline, sourced
+   from DWR LandIQ crop mapping. Shows drought-fallowing / wet-year recovery. */
+function cropTrendSection(name) {
+  const rows = CROP.filter(c => c.subbasin === name);
+  if (!rows.length) return "";
+  const byYear = {};
+  rows.forEach(c => { byYear[c.year] = (byYear[c.year] || 0) + Number(c.cropped_acres || 0); });
+  const series = CROP_YEARS.map(y => ({ y, v: byYear[y] || 0 })).filter(d => d.v > 0);
+  if (!series.length) return "";
+  const max = Math.max(...series.map(d => d.v));
+  const bars = series.map(d => {
+    const h = Math.round((d.v / max) * 46) + 2;
+    return `<div class="ct-col" title="${d.y}: ${Math.round(d.v).toLocaleString()} cropped ac">
+      <div class="ct-bar" style="height:${h}px"></div><div class="ct-yr">${String(d.y).slice(2)}</div></div>`;
+  }).join("");
+  const last = series[series.length - 1], first = series[0];
+  const chg = first.v ? Math.round((last.v - first.v) / first.v * 100) : 0;
+  return `<div class="gsa-list"><h4>Cropped acres · ${first.y}–${last.y}
+      <a class="src" href="${DWR_PORTAL}" target="_blank" title="DWR i15 Statewide Crop Mapping (LandIQ)">LandIQ ↗</a></h4>
+    <div class="ct-wrap">${bars}</div>
+    <div class="gsa-ac">${Math.round(last.v).toLocaleString()} ac cropped in ${last.y}
+      <span style="color:${chg < 0 ? '#b45309' : '#15803d'}">(${chg >= 0 ? '+' : ''}${chg}% since ${first.y})</span></div></div>`;
+}
+
+/* A titled block: a total row + its component breakdown, all sharing one (DWR) source link.
+   Rows are category-matched; `totalMetric` is the sum row, `prefix`+X are the components. */
+function breakdownSection(name, category, title, totalMetric, prefix, units) {
+  const rows = (METRICS[name] || []).filter(r => r.category === category &&
+    (r.area_name || "Subbasin") === "Subbasin" && r.metric.startsWith(prefix) && r.value !== "");
+  if (!rows.length) return "";
+  const total = rows.find(r => r.metric === totalMetric);
+  const parts = rows.filter(r => r !== total).sort((a, b) => Number(b.value) - Number(a.value));
+  const s = total ? srcLink(total.source_doc, total.page) : srcLink(parts[0].source_doc, parts[0].page);
+  const period = total && total.period && total.period !== "current" ? " · " + total.period : "";
+  const label = m => m.replace(prefix, "").replace(/_/g, " ");
+  const num = v => Number(v).toLocaleString();
+  let html = `<div class="gsa-list"><h4>${title}${period}` +
+    ` <a class="src" href="${s.url}" target="_blank" title="${escA((total || parts[0]).notes)}">${s.label}</a></h4>`;
+  if (total) html += `<div class="stat-v" style="font-size:15px">${num(total.value)} <small>${units}</small></div>`;
+  html += `<ul>` + parts.map(r => {
+    const pct = total && Number(total.value) ? ` <small>(${Math.round(Number(r.value) / Number(total.value) * 100)}%)</small>` : "";
+    return `<li>${label(r.metric)}: <b>${num(r.value)}</b>${units === "count" ? "" : " " + units}${pct}</li>`;
+  }).join("") + `</ul></div>`;
+  return html;
 }
 
 /* ---- Comparison charts (per-acre bars) ---- */
@@ -172,11 +247,36 @@ function barChart(title, metric, opts) {
   return `<div class="chart-card"><h3>${title}</h3>${rows}</div>`;
 }
 
+/* Cross-subbasin cropped acres (2024) with a 2020→2024 change indicator. */
+function cropCompareChart() {
+  const data = Object.keys(SUBBASINS).map(name => {
+    const rows = CROP.filter(c => c.subbasin === name);
+    if (!rows.length) return null;
+    const sum = y => rows.filter(c => Number(c.year) === y).reduce((a, c) => a + Number(c.cropped_acres || 0), 0);
+    const v = sum(2024), base = sum(2020);
+    return v ? { name, val: v, chg: base ? Math.round((v - base) / base * 100) : 0 } : null;
+  }).filter(Boolean).sort((a, b) => b.val - a.val);
+  if (!data.length) return "";
+  const max = Math.max(...data.map(d => d.val));
+  const rows = data.map(d => {
+    const w = max ? (d.val / max * 100) : 0;
+    const chg = `<span style="color:${d.chg < 0 ? '#b45309' : '#15803d'}">${d.chg >= 0 ? '+' : ''}${d.chg}%</span>`;
+    return `<div class="bar-row"><span class="lbl">${d.name}</span>
+      <span class="bar-track"><span class="bar-fill" style="width:${w}%;background:${SUBBASINS[d.name].color}"></span></span>
+      <span class="val">${Math.round(d.val / 1000)}k ${chg}</span></div>`;
+  }).join("");
+  return `<div class="chart-card"><h3>Cropped acres — 2024 (Δ vs 2020)
+    <a class="src" href="${DWR_PORTAL}" target="_blank" title="DWR LandIQ crop mapping">↗</a></h3>${rows}</div>`;
+}
+
 function renderCharts() {
   document.getElementById("charts-grid").innerHTML = [
     barChart("Sustainable yield (per acre)", "sustainable_yield", { perArea: true, fmt: v => v.toFixed(2) + " AF/ac" }),
     barChart("Overdraft — change in storage (per acre)", "change_in_storage", { perArea: true, fmt: v => v.toFixed(2) + " AF/ac" }),
     barChart("Sustainable yield (total)", "sustainable_yield", { perArea: false, fmt: v => Math.round(v).toLocaleString() + " AFY" }),
+    barChart("Ag groundwater pumping (per acre)", "gw_extraction_agricultural", { perArea: true, fmt: v => v.toFixed(2) + " AF/ac" }),
+    barChart("Total groundwater pumping", "gw_extraction_total", { perArea: false, fmt: v => Math.round(v).toLocaleString() + " AFY" }),
+    cropCompareChart(),
     barChart("Subbasin area", "basin_area", { perArea: false, fmt: v => Math.round(v).toLocaleString() + " ac" }),
   ].join("");
 }
@@ -220,14 +320,17 @@ Promise.all([
   fetch("data/source_documents.csv").then(r => r.text()),
   fetch("data/subbasins_gsas.geojson").then(r => r.json()),
   fetch("data/gsa_acreage.csv").then(r => r.ok ? r.text() : ""),
-]).then(([mText, dText, geo, aText]) => {
+  fetch("data/crop_acres_by_gsa.csv").then(r => r.ok ? r.text() : ""),
+]).then(([mText, dText, geo, aText, cText]) => {
+  if (cText) CROP = parseCSV(cText);
   parseCSV(mText).forEach(r => { (METRICS[r.subbasin_name] = METRICS[r.subbasin_name] || []).push(r); });
   parseCSV(dText).forEach(r => {
     DOCS[r.canonical_name] = r;
     if (r.doc_type === "GSP") { const n = B118_NAME[r.subbasin]; if (n) (GSPS_BY_SUB[n] = GSPS_BY_SUB[n] || []).push(r); }
   });
   if (aText) parseCSV(aText).forEach(r => {
-    (GSA_ACREAGE[r.gsa] = GSA_ACREAGE[r.gsa] || {})[r.metric] = { value: r.value, page: r.page, source_doc: r.source_doc };
+    (GSA_ACREAGE[r.gsa] = GSA_ACREAGE[r.gsa] || {})[r.metric] =
+      { value: r.value, page: r.page, source_doc: r.source_doc, status: r.status || "" };
   });
   document.getElementById("link-mode").textContent =
     CFG.PDF_BASE ? "(links jump to the exact page)" : "(links open the source document in Drive)";

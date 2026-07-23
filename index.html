@@ -11,8 +11,9 @@
 <header>
   <h1>San Joaquin Valley — GSP Comparison Dashboard</h1>
   <p class="sub">Sustainability metrics across the southern SJV subbasins, from adopted Groundwater
-     Sustainability Plans. Click a subbasin on the map for its stats; every number links to the
-     GSP page it came from. <span id="link-mode"></span></p>
+     Sustainability Plans, DWR annual-report data (pumping, wells), and DWR/LandIQ crop mapping
+     (cropped acres 2020–2024). Click a subbasin for its stats; every number links to its source.
+     <span id="link-mode"></span></p>
 </header>
 
 <main>
@@ -25,8 +26,8 @@
 
   <section class="charts">
     <h2>Cross-subbasin comparison</h2>
-    <p class="note">Bars are per-acre normalized so differently-sized subbasins compare fairly.
-       Hover a bar for the value + source.</p>
+    <p class="note">Per-acre bars normalize for subbasin size; cropped-acre bars show 2024 totals
+       with the change since 2020 (drought fallowing → wet-year recovery). Hover for value + source.</p>
     <div id="charts-grid" class="charts-grid"></div>
   </section>
 

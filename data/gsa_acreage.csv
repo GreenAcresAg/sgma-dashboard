@@ -1,17 +1,32 @@
-subbasin,gsa,metric,value,page,source_doc,snippet
-5-022.11,East Kaweah GSA,total_area,15000,46,Kaweah Subbasin GSP — East Kaweah GSA (2nd Amended),"ers in Exeter, California. The district encompasses approximately 15,000 acres, of whic"
-5-022.13,Lower Tule River ID GSA,total_area,102000,338,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),"January 31st, 2020. LTRID boundaries encompasses more than 102,000 acres and appro"
-5-022.13,Lower Tule River ID GSA,irrigated_area,27327,1250,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),"able crop survey record indicates a net irrigated area of 27,327 acres in 1924."
-5-022.08,North Fork Kings GSA,total_area,168366,20,Kings Subbasin GSP — North Fork Kings GSA,"hase in above average water years. The area of the GSA is approximately 168,366 acres. There ar"
-5-022.08,South Kings GSA,total_area,9635,18,Kings Subbasin GSP — South Kings GSA (2025 Update),"ndary of the Kings Subbasin. The SKGSA Plan area is approximately 9,635 acres. The age"
-5-022.08,North Kings GSA,total_area,311000,16,Kings Subbasin GSP — North Kings GSA (2025 Update),"ied in Bulletin 118, to the north. The Plan area is approximately 311,000 acres and is ap"
-5-022.08,Central Kings GSA,total_area,141452,51,Kings Subbasin GSP — Central Kings GSA (2025 Update),"in the Kings Subbasin. The CKGSA encompasses an area of 141,452 acres on the Sa"
-5-022.08,Kings River East GSA,total_area,14400,82,Kings Subbasin GSP — Kings River East GSA (2025 Update),"es north of the city of Reedley. KRWD encompasses about 14,400 acres and deliv"
-5-022.08,James GSA,total_area,26392,53,Kings Subbasin GSP — James GSA (2025 Update),"supply irrigation water. The District covers 26,392 acres wholly wi"
-5-022.08,James GSA,irrigated_area,23874,53,Kings Subbasin GSP — James GSA (2025 Update),"ly, the JID serves water to 60 farms on 23,874 irrigated acres of agricu"
-5-022.08,McMullin Area GSA,total_area,120635,63,Kings Subbasin GSP — McMullin Area GSA (2025 Update),"ea is located within Fresno County and covers around 120,635 acres. It is c"
-5-022.13,Pixley Irrigation District GSA,total_area,69000,290,Tule Subbasin GSP — Pixley ID GSA (Revised),"January 31st, 2020. PIXID boundaries encompasses more than 69,000 acres and appro"
-5-022.13,Pixley Irrigation District GSA,irrigated_area,50474,1327,Tule Subbasin GSP — Pixley ID GSA (Revised),"ge Irrigated acres (from Table 5) 50,474 Irrigated acres over a pe"
-5-022.13,Tri-County Water Authority GSA - Tule,total_area,12000,19,Tule Subbasin GSP — Tri-County WA GSA (2022 Amended),"of which are irrigated. The North Area encompasses about 12,000 acres, 6,000 a"
-5-022.13,Delano-Earlimart Irrigation District GSA,total_area,64820,25,Tule Subbasin GSP — Delano-Earlimart ID GSA,"GSA. As noted previously, the DEID GSP covers a total of 64,820 acres and wholl"
-5-022.13,Alpaugh GSA,total_area,14491,31,Tule Subbasin GSP — Alpaugh GSA,"A boundaries (Figure 1-3). The Alpaugh GSA area is 14,491 acres within th"
+subbasin,gsa,metric,value,page,source_doc,status,snippet
+5-022.13,Lower Tule River ID GSA,total_area,102000,332,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),verified,"LTRID GSA serves more than 102,000 acres within its boundary"
+5-022.13,Pixley Irrigation District GSA,total_area,68000,284,Tule Subbasin GSP — Pixley ID GSA (Revised),verified,"Pixley ID GSA serves more than 68,000 acres within its boundary"
+5-022.13,Tri-County Water Authority GSA - Tule,total_area,61779,1677,Tule Subbasin GSP — Tri-County WA GSA (2022 Amended),verified,"The GSA covers an area of approximately 61,779 acres (Tule Subbasin portion)"
+5-022.13,Tri-County Water Authority GSA - Tule,irrigated_area,29000,19,Tule Subbasin GSP — Tri-County WA GSA (2022 Amended),verified,"61,000 acres in the Tule Subbasin portion of the GSA, 29,000 acres of which are irrigated"
+5-022.13,Delano-Earlimart Irrigation District GSA,total_area,64820,22,Tule Subbasin GSP — Delano-Earlimart ID GSA,verified,"The total area covered by the DEID GSA is 64,820 acres"
+5-022.13,Eastern Tule GSA,total_area,161174,505,Tule Subbasin GSP — Eastern Tule GSA (Revised),verified,"ETGSA's boundaries encompass 161,174 acres"
+5-022.13,Alpaugh GSA,total_area,14491,31,Tule Subbasin GSP — Alpaugh GSA,verified,"The Alpaugh GSA area is 14,491 acres within the 475,895-acre subbasin"
+5-022.11,East Kaweah GSA,total_area,117300,3491,Kaweah Subbasin GSP — East Kaweah GSA (2nd Amended),verified,"EKGSA covers approximately 117,300 acres"
+5-022.11,Greater Kaweah GSA,total_area,219300,1567,Kaweah Subbasin GSP — Mid-Kaweah GSA (2nd Amended),crossref,"Greater Kaweah GSA (219,300 acres) — stated in Mid-Kaweah GSP; GKGSA draft GSP omits a single total"
+5-022.11,Greater Kaweah GSA,irrigated_area,166400,1567,Kaweah Subbasin GSP — Mid-Kaweah GSA (2nd Amended),verified,"2021 irrigated acreage within Greater Kaweah GSA (166,400 acres)"
+5-022.11,Mid-Kaweah GSA,total_area,104400,3956,Kaweah Subbasin GSP — Mid-Kaweah GSA (2nd Amended),derived,"Kaweah residual (441,000 - GKGSA 219,300 - EKGSA 117,300); MKGSA GSP states Tulare ID service area 77,000 ac (subset)"
+5-022.08,North Kings GSA,total_area,311831,47,Kings Subbasin GSP — North Kings GSA (2025 Update),verified,"The Plan area is 311,831 acres"
+5-022.08,Central Kings GSA,total_area,141452,56,Kings Subbasin GSP — Central Kings GSA (2025 Update),verified,"The Plan area is 141,452 acres"
+5-022.08,North Fork Kings GSA,total_area,168366,70,Kings Subbasin GSP — North Fork Kings GSA,verified,"The Plan Area is approximately 168,366 acres"
+5-022.08,South Kings GSA,total_area,9635,18,Kings Subbasin GSP — South Kings GSA (2025 Update),verified,"The SKGSA Plan area is approximately 9,635 acres"
+5-022.08,McMullin Area GSA,total_area,120635,63,Kings Subbasin GSP — McMullin Area GSA (2025 Update),verified,"The plan area ... covers around 120,635 acres"
+5-022.08,Kings River East GSA,total_area,191000,71,Kings Subbasin GSP — Kings River East GSA (2025 Update),verified,"the KREGSA's nearly 191,000 acres is designated as agricultural"
+5-022.08,James GSA,total_area,36281,53,Kings Subbasin GSP — James GSA (2025 Update),derived,"Kings residual (979,200 - sum of six other Kings GSAs); James GSP states member districts (RD 1606 18,520; 26,392) not a single total"
+5-022.11,East Kaweah GSA,irrigated_area,82704,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); East Kaweah GSA
+5-022.11,Mid-Kaweah GSA,irrigated_area,62699,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); Mid-Kaweah GSA
+5-022.08,Central Kings GSA,irrigated_area,115169,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); Central Kings GSA
+5-022.08,James GSA,irrigated_area,22617,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); James GSA
+5-022.08,Kings River East GSA,irrigated_area,129553,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); Kings River East GSA
+5-022.08,McMullin Area GSA,irrigated_area,104160,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); McMullin Area GSA
+5-022.08,North Fork Kings GSA,irrigated_area,133428,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); North Fork Kings GSA
+5-022.08,North Kings GSA,irrigated_area,128530,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); North Kings GSA
+5-022.08,South Kings GSA,irrigated_area,1899,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); South Kings GSA
+5-022.13,Alpaugh GSA,irrigated_area,5872,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); Alpaugh GSA
+5-022.13,Delano-Earlimart Irrigation District GSA,irrigated_area,45256,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); Delano-Earlimart Irrigation District GSA
+5-022.13,Lower Tule River ID GSA,irrigated_area,79377,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); Lower Tule River Irrigation District GSA
+5-022.13,Pixley Irrigation District GSA,irrigated_area,50528,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); Pixley Irrigation District GSA
