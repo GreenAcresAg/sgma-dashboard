@@ -1,22 +1,56 @@
 subbasin,gsa,metric,value,page,source_doc,status,snippet
-5-022.13,Lower Tule River ID GSA,total_area,102000,332,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),verified,"LTRID GSA serves more than 102,000 acres within its boundary"
-5-022.13,Pixley Irrigation District GSA,total_area,68000,284,Tule Subbasin GSP — Pixley ID GSA (Revised),verified,"Pixley ID GSA serves more than 68,000 acres within its boundary"
-5-022.13,Tri-County Water Authority GSA - Tule,total_area,61779,1677,Tule Subbasin GSP — Tri-County WA GSA (2022 Amended),verified,"The GSA covers an area of approximately 61,779 acres (Tule Subbasin portion)"
+5-022.11,Greater Kaweah GSA,total_area,219449,1567,Kaweah Subbasin GSP — Mid-Kaweah GSA (2nd Amended),gis,"Geodesic area of official DWR GSA boundary; GSP states ~219,300 ac (p1567)"
+5-022.11,East Kaweah GSA,total_area,117182,3491,Kaweah Subbasin GSP — East Kaweah GSA (2nd Amended),gis,"Geodesic area of official DWR GSA boundary; GSP states ~117,300 ac (p3491)"
+5-022.11,Mid-Kaweah GSA,total_area,104421,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Kern Non-Districted Land Authority GSA,total_area,279693,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Westside District Water Authority GSA,total_area,260049,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Kern River GSA,total_area,230266,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Semitropic Water Storage District GSA,total_area,224261,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,West Kern Water District GSA,total_area,160484,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Arvin GSA,total_area,107627,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Wheeler Ridge-Maricopa GSA,total_area,87392,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,North Kern Water Storage District GSA,total_area,67422,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Southern San Joaquin Municipal Utility District - GSA,total_area,66161,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Cawelo Water District GSA,total_area,62934,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Buena Vista Water Storage District GSA,total_area,51031,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Shafter-Wasco Irrigation District GSA,total_area,50044,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Rosedale-Rio Bravo Water Storage District GSA,total_area,49039,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Henry Miller Water District GSA,total_area,26033,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Kern Water Bank GSA,total_area,20968,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Tejon-Castac Water District GSA,total_area,19513,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Kern-Tulare Water District GSA - Kern County,total_area,11308,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Olcese Water District GSA,total_area,3207,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Pioneer GSA,total_area,2310,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.14,Greenfield County Water District GSA,total_area,2206,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.08,North Kings GSA,total_area,310518,47,Kings Subbasin GSP — North Kings GSA (2025 Update),gis,"Geodesic area of official DWR GSA boundary; GSP states ~311,831 ac (p47)"
+5-022.08,Kings River East GSA,total_area,191367,71,Kings Subbasin GSP — Kings River East GSA (2025 Update),gis,"Geodesic area of official DWR GSA boundary; GSP states ~191,000 ac (p71)"
+5-022.08,North Fork Kings GSA,total_area,168329,70,Kings Subbasin GSP — North Fork Kings GSA,gis,"Geodesic area of official DWR GSA boundary; GSP states ~168,366 ac (p70)"
+5-022.08,Central Kings GSA,total_area,150975,56,Kings Subbasin GSP — Central Kings GSA (2025 Update),gis,"Geodesic area of official DWR GSA boundary; GSP states ~141,452 ac (p56)"
+5-022.08,McMullin Area GSA,total_area,120610,63,Kings Subbasin GSP — McMullin Area GSA (2025 Update),gis,"Geodesic area of official DWR GSA boundary; GSP states ~120,635 ac (p63)"
+5-022.08,James GSA,total_area,29022,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.08,South Kings GSA,total_area,10042,18,Kings Subbasin GSP — South Kings GSA (2025 Update),gis,"Geodesic area of official DWR GSA boundary; GSP states ~9,635 ac (p18)"
+5-022.12,El Rico GSA,total_area,228795,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.12,Mid-Kings River GSA,total_area,97351,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.12,Southwest Kings GSA,total_area,89851,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.12,South Fork Kings GSA,total_area,71274,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.12,Tri-County Water Authority GSA - Tulare Lake,total_area,48233,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.13,Lower Tule River Irrigation District GSA,total_area,104805,332,Tule Subbasin GSP — Lower Tule River ID GSA (Revised),gis,"Geodesic area of official DWR GSA boundary; GSP states ~102,000 ac (p332)"
+5-022.13,Tule East GSA JPA,total_area,98749,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.13,Pixley Irrigation District GSA,total_area,69927,284,Tule Subbasin GSP — Pixley ID GSA (Revised),gis,"Geodesic area of official DWR GSA boundary; GSP states ~68,000 ac (p284)"
+5-022.13,Tri-County Water Authority GSA - Tule,total_area,60731,1677,Tule Subbasin GSP — Tri-County WA GSA (2022 Amended),gis,"Geodesic area of official DWR GSA boundary; GSP states ~61,779 ac (p1677)"
+5-022.13,Delano-Earlimart Irrigation District GSA,total_area,57484,22,Tule Subbasin GSP — Delano-Earlimart ID GSA,gis,"Geodesic area of official DWR GSA boundary; GSP states ~64,820 ac (p22)"
+5-022.13,Saucelito Irrigation District GSA,total_area,19722,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.13,Porterville Irrigation District GSA,total_area,15513,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.13,Alpaugh GSA,total_area,14525,31,Tule Subbasin GSP — Alpaugh GSA,gis,"Geodesic area of official DWR GSA boundary; GSP states ~14,491 ac (p31)"
+5-022.13,Terra Bella Irrigation District GSA,total_area,13825,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.13,Kern-Tulare Water District GSA - Tule,total_area,8667,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.13,County of Tulare GSA - Tule,total_area,8256,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.13,Tea Pot Dome Water District GSA,total_area,3015,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.13,Vandalia Water District GSA,total_area,1402,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.09,Westlands Water District GSA,total_area,611633,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
+5-022.09,County of Fresno GSA - Westside,total_area,10163,,DWR SGMA GSA boundary (geodesic area),gis,Geodesic area of official DWR SGMA GSA boundary polygon
 5-022.13,Tri-County Water Authority GSA - Tule,irrigated_area,29000,19,Tule Subbasin GSP — Tri-County WA GSA (2022 Amended),verified,"61,000 acres in the Tule Subbasin portion of the GSA, 29,000 acres of which are irrigated"
-5-022.13,Delano-Earlimart Irrigation District GSA,total_area,64820,22,Tule Subbasin GSP — Delano-Earlimart ID GSA,verified,"The total area covered by the DEID GSA is 64,820 acres"
-5-022.13,Eastern Tule GSA,total_area,161174,505,Tule Subbasin GSP — Eastern Tule GSA (Revised),verified,"ETGSA's boundaries encompass 161,174 acres"
-5-022.13,Alpaugh GSA,total_area,14491,31,Tule Subbasin GSP — Alpaugh GSA,verified,"The Alpaugh GSA area is 14,491 acres within the 475,895-acre subbasin"
-5-022.11,East Kaweah GSA,total_area,117300,3491,Kaweah Subbasin GSP — East Kaweah GSA (2nd Amended),verified,"EKGSA covers approximately 117,300 acres"
-5-022.11,Greater Kaweah GSA,total_area,219300,1567,Kaweah Subbasin GSP — Mid-Kaweah GSA (2nd Amended),crossref,"Greater Kaweah GSA (219,300 acres) — stated in Mid-Kaweah GSP; GKGSA draft GSP omits a single total"
 5-022.11,Greater Kaweah GSA,irrigated_area,166400,1567,Kaweah Subbasin GSP — Mid-Kaweah GSA (2nd Amended),verified,"2021 irrigated acreage within Greater Kaweah GSA (166,400 acres)"
-5-022.11,Mid-Kaweah GSA,total_area,104400,3956,Kaweah Subbasin GSP — Mid-Kaweah GSA (2nd Amended),derived,"Kaweah residual (441,000 - GKGSA 219,300 - EKGSA 117,300); MKGSA GSP states Tulare ID service area 77,000 ac (subset)"
-5-022.08,North Kings GSA,total_area,311831,47,Kings Subbasin GSP — North Kings GSA (2025 Update),verified,"The Plan area is 311,831 acres"
-5-022.08,Central Kings GSA,total_area,141452,56,Kings Subbasin GSP — Central Kings GSA (2025 Update),verified,"The Plan area is 141,452 acres"
-5-022.08,North Fork Kings GSA,total_area,168366,70,Kings Subbasin GSP — North Fork Kings GSA,verified,"The Plan Area is approximately 168,366 acres"
-5-022.08,South Kings GSA,total_area,9635,18,Kings Subbasin GSP — South Kings GSA (2025 Update),verified,"The SKGSA Plan area is approximately 9,635 acres"
-5-022.08,McMullin Area GSA,total_area,120635,63,Kings Subbasin GSP — McMullin Area GSA (2025 Update),verified,"The plan area ... covers around 120,635 acres"
-5-022.08,Kings River East GSA,total_area,191000,71,Kings Subbasin GSP — Kings River East GSA (2025 Update),verified,"the KREGSA's nearly 191,000 acres is designated as agricultural"
-5-022.08,James GSA,total_area,36281,53,Kings Subbasin GSP — James GSA (2025 Update),derived,"Kings residual (979,200 - sum of six other Kings GSAs); James GSP states member districts (RD 1606 18,520; 26,392) not a single total"
 5-022.11,East Kaweah GSA,irrigated_area,82704,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); East Kaweah GSA
 5-022.11,Mid-Kaweah GSA,irrigated_area,62699,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); Mid-Kaweah GSA
 5-022.08,Central Kings GSA,irrigated_area,115169,,DWR i15 Statewide Crop Mapping (LandIQ) 2024,landiq,2024 cropped acres (LandIQ crop map); Central Kings GSA

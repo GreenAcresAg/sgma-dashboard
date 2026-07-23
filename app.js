@@ -105,10 +105,13 @@ function fullGspLink(canon) {
 function acreageLine(gsa) {
   const a = GSA_ACREAGE[gsa] || {};
   const tag = { derived: ' <i title="subbasin residual — GSP states only sub-areas">(derived)</i>',
-                crossref: ' <i title="stated in a neighboring GSP">(cross-ref)</i>' };
+                crossref: ' <i title="stated in a neighboring GSP">(cross-ref)</i>',
+                gis: ' <i title="geodesic area of the official DWR GSA boundary">(DWR boundary)</i>' };
   const bit = (o, lbl) => {
     if (!o) return "";
-    const linkText = o.status === "landiq" ? "LandIQ 2024" : "p" + pageNum(o.page);
+    const linkText = o.status === "landiq" ? "LandIQ 2024"
+      : o.status === "gis" && !pageNum(o.page) ? "boundary"
+      : "p" + pageNum(o.page);
     return `${Number(o.value).toLocaleString()} ac ${lbl} ` +
       `<a class="src" href="${srcLink(o.source_doc, o.page).url}" target="_blank">${linkText}</a>` + (tag[o.status] || "");
   };
@@ -137,12 +140,12 @@ function gsaGroups(name) {
     (groups[k] = groups[k] || []).push(g);
   }
   const acr = gsas.map(g => GSA_ACREAGE[g]).filter(Boolean);
-  const anyVerified = acr.some(a => a.total_area && a.total_area.status === "verified");
-  const note = anyVerified
-    ? `✓ GSA total area verified against GSP pages (sums to subbasin). Irrigated acreage: most-recent from DWR land-use data, in progress.`
-    : `⚠ GSA acreage auto-extracted from GSPs — page-linked, being verified.`;
+  const anyTotal = acr.some(a => a.total_area);
+  const note = anyTotal
+    ? `✓ Total area = official DWR GSA boundary (geodesic; sums to subbasin). Cropped acres = DWR LandIQ (latest yr).`
+    : `Acreage cataloguing in progress.`;
   let html = `<div class="gsa-list"><h4>${gsas.length} GSAs — grouped by GSP</h4>` +
-    `<div class="gsa-note"${anyVerified ? ' style="color:#15803d"' : ''}>${note}</div>`;
+    `<div class="gsa-note"${anyTotal ? ' style="color:#15803d"' : ''}>${note}</div>`;
   for (const [canon, list] of Object.entries(groups)) {
     const head = canon === "__none__" ? "<i>GSA GSP not yet cataloged</i>"
       : `${canon} <a class="src" href="${fullGspLink(canon)}" target="_blank">Full GSP ↗</a>`;
